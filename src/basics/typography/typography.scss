@@ -1,0 +1,72 @@
+// Ensure default browser font size is 18px
+:root {
+  font-size: $root-font-size;
+}
+
+// Fonts
+
+@font-face {
+  font-family: $font-copy;
+  src: url("./fonts/WorkSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-card-label;
+  src: url("./fonts/Sensei-Medium.otf") format("opentype");
+}
+
+// FontAwesome is loaded from a CDN in index.html
+
+body {
+  font-family: $font-copy;
+  font-size: $font-size;
+  line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-copy;
+  line-height: $headings-line-height;
+  font-weight: 300;
+  margin: 2.75rem 0 1.05rem;
+}
+
+h1 {
+  font-size: map-get($typo-scale, "gamma");
+  margin-top: 0;
+}
+
+small,
+.text_small {
+  font-size: map-get($typo-scale, "micro");
+}
+
+abbr {
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+}
+
+hr {
+  color: $grey-lighten-30;
+  border: none;
+}
+
+a,
+a:visited,
+a:link,
+a:active,
+a:hover {
+  color: $green-base;
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  border-bottom: $border-style $green-base;
+}

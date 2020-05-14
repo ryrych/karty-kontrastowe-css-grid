@@ -1,0 +1,57 @@
+$canvas-size: 960px;
+$margins: (
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+);
+
+$root-font-size: 18px;
+$font-size-base: 1rem;
+$font-size: 1rem;
+$line-height-base: 1.65;
+$headings-line-height: 1.15;
+
+// https://type-scale.com/?size=18&scale=1.414&text=A%20Visual%20Type%20Scale&font=Work%20Sans&fontweight=400&bodyfont=Poppins&bodyfontweight=400&lineheight=1.65&backgroundcolor=white&fontcolor=%23333&preview=false
+$typo-scale: (
+  "alpha": $font-size-base,
+  // 18px
+    "beta": $font-size-base * 1.414,
+  // 25.45px
+    "gamma": $font-size-base * 1.414 * 1.414,
+  // 35,99px,
+    "delta": $font-size-base * 1.414 * 1.414 * 1.414,
+  // 50.89px,
+    "epsilon": $font-size-base * 1.414 * 1.414 * 1.414 * 1.414,
+  // 71.96px,
+    "zeta": $font-size-base * 1.414 * 1.414 * 1.414 * 1.414 * 1.414,
+  // 101.75px,
+    "micro": $font-size-base * 0.707,
+  // 12.73px
+);
+
+$font-copy: WorkSans, sans-serif;
+$font-card-label: Sensei;
+
+$h1-font-size: map-get($typo-scale, "gamma");
+$small-font-size: map-get($typo-scale, "micro");
+
+$border-style: 1px solid;
+
+// Simplify canvas size
+$board-size: floor($canvas-size * 0.62); // 595px
+$legend-size: $canvas-size - $board-size; //365px
+$grid-gap: map-get($typo-scale, "delta");
+
+$card-size: floor($board-size / 3); // 198px
+
+// 198px * 62%  * 80% / card size times 62% times 80% of available space
+$card-icon-size: floor($card-size * 0.62 * 0.8); // 98px
+
+// Colors
+// Inspiration: https://medium.com/@marcintreder/design-system-sprint-2-one-color-palette-to-rule-them-all-d0114ed1f659
+
+$white: #ffffff;
+$base-grey: hsl(0, 0%, 20%);
+$grey-lighten-30: hsl(0, 0%, 50%);
+$green-base: #547b1b;

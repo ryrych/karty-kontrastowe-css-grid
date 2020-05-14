@@ -1,0 +1,23 @@
+body {
+  @media screen and (min-width: $canvas-size) {
+    display: grid;
+    grid-template-columns: [board] $board-size [legend] $legend-size;
+    grid-template-rows: $canvas-size;
+    align-items: center;
+    height: 100vh;
+    min-height: $canvas-size;
+    margin-left: map-get($margins, "left");
+    margin-right: map-get($margins, "right");
+    margin-top: map-get($margins, "top");
+    margin-bottom: map-get($margins, "bottom");
+  }
+}
+
+aside {
+  grid-column: legend;
+  padding-left: $grid-gap; // To not extend size of the legend column
+}
+
+.board {
+  grid-column: board;
+}

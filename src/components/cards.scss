@@ -1,0 +1,90 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, $card-size);
+  grid-template-rows: repeat(3, $card-size);
+  grid-template-areas:
+    "a1 a2 a3"
+    "b1 b2 b3"
+    "c1 c2 c3";
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.card {
+  display: grid;
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+  background: $white;
+
+  grid-template-rows: [picture] 62% [label] 38%;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  &--dark {
+    background-color: $base-grey;
+  }
+}
+
+.card__name {
+  font-family: $font-card-label;
+  color: $base-grey;
+
+  .card--dark & {
+    color: $white;
+  }
+}
+
+.card__icon {
+  color: $base-grey;
+  font-size: $card-icon-size;
+
+  .card--dark & {
+    color: $white;
+  }
+}
+
+// First row
+.card:nth-child(1) {
+  grid-area: a1;
+  transform: rotate(-15deg);
+}
+.card:nth-child(2) {
+  grid-area: a2;
+  transform: rotate(15deg);
+}
+.card:nth-child(3) {
+  grid-area: a3;
+  transform: rotate(-25deg);
+}
+
+// Second row
+.card:nth-child(4) {
+  grid-area: b1;
+  transform: rotate(-25deg);
+}
+.card:nth-child(5) {
+  grid-area: b2;
+  transform: rotate(-25deg);
+}
+.card:nth-child(6) {
+  grid-area: b3;
+  transform: rotate(-75deg);
+}
+
+// Third row
+.card:nth-child(7) {
+  grid-area: c1;
+  transform: rotate(-5deg);
+}
+.card:nth-child(8) {
+  grid-area: c2;
+  transform: rotate(-5deg);
+}
+.card:nth-child(9) {
+  grid-area: c3;
+  transform: rotate(55deg);
+}
